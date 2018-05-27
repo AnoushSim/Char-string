@@ -6,6 +6,8 @@ int main()
   std::cout<<"Your string is: "<<arr<<"."<<std::endl;
   std::cout<<"Your new reversed string is: ";
   reverse_str(arr);
+  std::cout<<arr;
+  
   return 0;
 }
 void reverse_str(char* s)
@@ -14,11 +16,12 @@ void reverse_str(char* s)
   char* ptolast=s;
   while(*ptolast!='\0')
       ++ptolast;
+      --ptolast;
   while(s<ptolast)
   {
     tmp=*s;
     *s++=*ptolast;
     *ptolast--=tmp;
   }
-  std::cout<<s;
+  
 }
